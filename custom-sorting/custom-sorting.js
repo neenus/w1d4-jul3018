@@ -5,12 +5,15 @@ var students = [
   { id: 4, name: "alex",     age: 30 }
 ];
 
+var ageSort = students.sort(function (a, b) {
+  return b.age - a.age;
+});
 students = students.sort(function(student1, student2){
   if (student1.name > student2.name) {
     return 1;
-  } else {
+  } else if(student1.name < student2.name) {
     return -1;
-  }
-  // console.log(obj);
+  } else return ageSort;
+
 });
 console.log(students);
